@@ -1,3 +1,6 @@
+install:
+	poetry install
+
 dev:
 	poetry run flask --app page_analyzer:app run
 
@@ -8,11 +11,15 @@ start:
 selfcheck:
 	poetry check
 
-check: selfcheck test lint
-
 lint:
 	poetry run flake8 page_analyzer
 
 .PHONY: install test lint selfcheck check build
 
+publish:
+	poetry publish --dry-run
 
+check: selfcheck test lint
+
+build: check
+	poetry build
