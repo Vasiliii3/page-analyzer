@@ -21,7 +21,7 @@ where you can add websites and treat them with small "SEO checks".
 * Poetry 1.3.1
 
 ### Install
+1. ` Git clone https://github.com/Vasiliii3/python-project-83.git`
+2. Сreate a file in the root of the project .env (example in .env_example)
+3. Use this command to install the package `make install`
 
-Use this command to install the package
-
-`make install`
