@@ -14,7 +14,5 @@ selfcheck:
 publish:
 	poetry publish --dry-run
 
-check: selfcheck test lint
-
 build: check
 	poetry build
