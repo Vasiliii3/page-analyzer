@@ -18,8 +18,3 @@ check: selfcheck test lint
 
 build: check
 	poetry build
-
-.PHONY: install test lint selfcheck check build
-
-lint:
-	poetry run flake8 page_analyzer
