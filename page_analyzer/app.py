@@ -61,7 +61,7 @@ def post_urls():
             flash('URL обязателен', FLASH_DANGER)
         if 'long' in error:
             flash('URL превышает 255 символов', FLASH_DANGER)
-        return render_template('index.html', url=url)
+        return render_template('index.html', url=url), 422
     url = short_address(url)
     id_url = dbase.get_name(url)
     if id_url:
@@ -71,7 +71,7 @@ def post_urls():
         id_url = dbase.add_url(url)
         flash('Страница успешно добавлена', FLASH_SUCCESSFUL)
 
-    return redirect(url_for('get_urls_id', id=id_url))
+    return redirect(url_for('get_urls_id', id=id_url)), 301
 
 
 @app.post('/urls/<int:id>/checks')
