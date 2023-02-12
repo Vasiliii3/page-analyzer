@@ -11,11 +11,6 @@ start:
 selfcheck:
 	poetry check
 
-#lint:
-#	poetry run flake8 page_analyzer
-
-.PHONY: install test lint selfcheck check build
-
 publish:
 	poetry publish --dry-run
 
