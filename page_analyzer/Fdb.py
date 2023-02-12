@@ -74,15 +74,12 @@ class FDataBase:
         self.connect()
         try:
             with self.conn.cursor(cursor_factory=RealDictCursor) as curs:
-                curs.execute("SELECT u.url_id, u.status_code, u.created_at, "
-                             "urls.name from "
-                             "(SELECT url_id, max(created_at) as created_at "
-                             "FROM url_checks GROUP BY url_checks.url_id) as t"
-                             " join url_checks as u on u.url_id = t.url_id "
-                             "and u.created_at = "
-                             "t.created_at "
-                             "join urls on u.url_id = urls.id "
-                             "order by u.url_id DESC", )
+                curs.execute("select u.id, name, uc.created_at, status_code"
+                             " from urls as u left join "
+                             "(SELECT url_id, max(id) as maxid FROM url_checks "
+                             "GROUP BY url_checks.url_id) as t "
+                             "on u.id = t.url_id left join url_checks as uc "
+                             "on uc.id = t.maxid order by u.id DESC;", )
                 return curs.fetchall()
         finally:
             self.closed()

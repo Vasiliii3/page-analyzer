@@ -14,8 +14,8 @@
         {% if urls %}
             {% for url in urls %}
                 <tr>
-                    <td>{{ url.url_id }}</td>
-                    <td><a href="{{ url_for('get_urls_id', id=url.url_id) }}">{{ url.name }}</a></td>
+                    <td>{{ url.id }}</td>
+                    <td><a href="{{ url_for('get_urls_id', id=url.id) }}">{{ url.name }}</a></td>
                     <td>{{ url.created_at if url.created_at is not none }}</td>
                     <td>{{ url.status_code if url.status_code is not none }}</td>
                 </tr>
