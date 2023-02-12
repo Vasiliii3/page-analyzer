@@ -84,6 +84,7 @@ def check_urls(id):
     status_code, text_html = check
     seo = get_html_paser(text_html)
     dbase.add_urls(id, status_code, seo['h1'], seo['title'], seo['description'])
+    flash('Страница успешно проверена', FLASH_SUCCESSFUL)
     return redirect(url_for('get_urls_id', id=id))
 
 
