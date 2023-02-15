@@ -5,7 +5,7 @@ from flask import Flask, render_template, request, \
     flash, abort, redirect, url_for
 from pathlib import Path
 from page_analyzer.Fdb import FDataBase
-from page_analyzer.tool import short_address, validate_urls, \
+from page_analyzer.utils import short_address, validate_urls, \
     get_req_code, get_html_paser
 
 load_dotenv()
