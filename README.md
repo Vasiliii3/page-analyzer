@@ -24,4 +24,5 @@ where you can add websites and treat them with small "SEO checks".
 1. ` Git clone https://github.com/Vasiliii3/python-project-83.git`
 2. Сreate a file in the root of the project .env (example in .env_example)
 3. Use this command to install the package `make install`
-
+4. Create PostgreSQL database with cheatsheet (database.sql)
+5. Run make dev for debugging (WSGI debug='True'), or make start for production (gunicorn)
