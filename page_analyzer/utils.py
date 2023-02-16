@@ -11,15 +11,15 @@ def short_address(url: str) -> str:
 
 
 def validate_urls(url):
-    message = list()
+    errors = list()
     if url == '':
-        message.append('empty')
+        errors.append('empty')
     len_url = len(url)
     if len_url > 255:
-        message.append('long')
+        errors.append('long')
     if not validators.url(url):
-        message.append('wrong')
-    return message if len(message) > 0 else None
+        errors.append('wrong')
+    return errors if len(errors) > 0 else None
 
 
 def get_req_code(url):
@@ -33,7 +33,7 @@ def get_req_code(url):
         return None
 
 
-def get_html_paser(html):
+def get_data_seo(html):
     soup = BeautifulSoup(html, 'html.parser')
     title = soup.title.string
     h1_ = soup.find('h1')
