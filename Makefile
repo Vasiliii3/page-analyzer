@@ -16,3 +16,10 @@ publish:
 
 build: check
 	poetry build
+
+check: selfcheck test lint
+
+lint:
+	poetry run flake8 page_analyzer
+
+.PHONY: install test lint selfcheck check build
