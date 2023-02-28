@@ -25,7 +25,7 @@ def page_not_found(e):
 
 @app.route('/')
 def index():
-    return render_template('index.html', url='')
+    return render_template('index.html')
 
 
 @app.route('/urls/<int:id>')
@@ -58,7 +58,7 @@ def post_urls():
         id_url = add_url(url)
         flash('Страница успешно добавлена', FLASH_SUCCESSFUL)
 
-    return redirect(url_for('get_urls_id', id=id_url)), 301
+    return redirect(url_for('get_urls_id', id=id_url))
 
 
 @app.post('/urls/<int:id>/checks')
