@@ -17,8 +17,8 @@ where you can add websites and treat them with small "SEO checks".
 * Poetry 1.3.1
 
 ### Install
-1. `Git clone https://github.com/Vasiliii3/python-project-83.git`
-2. `cd python-project-83`
+1. `Git clone https://github.com/Vasiliii3/page_analyzer.git`
+2. `cd page_analyzer`
 3. Сreate a file in the root of the project .env (example in .env_example)
 4. Use this command to install the package `make install`
 5. Create PostgreSQL database with cheatsheet (database.sql)
